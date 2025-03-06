@@ -36,12 +36,12 @@ const Hero = () => {
               transform: "translate(0px,0px)",
             }}
           >
-            <font>
+            <font className="dark:text-amber-50">
               <font>Software</font>
             </font>
             <br />
             <span className=" relative">
-              <font>
+              <font className="dark:text-amber-50">
                 <font>Engineer</font>
               </font>
             </span>
