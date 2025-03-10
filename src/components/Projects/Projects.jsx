@@ -1,4 +1,5 @@
 import React from "react";
+import ProjectsContainer from "./ProjectsContainer";
 
 const Projects = () => {
   return (
@@ -15,6 +16,7 @@ const Projects = () => {
         </h1>
       </div>
       {/* Projects contexts */}
+      <ProjectsContainer />
     </div>
   );
 };

@@ -61,19 +61,19 @@ const Hero = () => {
               <font>
                 <font>I am a </font>
               </font>
-              <span className=" font-bold border-text-100 text-text-100">
+              <span className=" font-bold border-text-100 ">
                 <font>Software Engineer </font>
               </span>
               <font>
                 <font>and </font>
               </font>
-              <span className=" font-bold border-text-100 text-text-100">
+              <span className=" font-bold border-text-100 ">
                 <font>Front-End </font>
               </span>
               <font>
                 <font>and </font>
               </font>
-              <span className=" font-bold border-text-100 text-text-100">
+              <span className=" font-bold border-text-100">
                 <font>Back-End </font>
               </span>
               <font>
