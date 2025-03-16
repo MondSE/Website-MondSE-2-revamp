@@ -10,9 +10,7 @@ const Projects = () => {
       {/* Tilte */}
       <div className=" flex gap-3 items-center mb-6 xl:gap-6 md:mb-12 xl:mb-28">
         <h1 className=" text-5xl font-bold lg:text-7xl text-primary-300">
-          <font style={{ verticalAlign: "inherit" }}>
-            <font style={{ verticalAlign: "inherit" }}>Projects</font>
-          </font>
+          Projects
         </h1>
       </div>
       {/* Projects contexts */}
