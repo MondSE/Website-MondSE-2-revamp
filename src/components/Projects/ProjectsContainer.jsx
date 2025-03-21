@@ -1,5 +1,6 @@
 import React from "react";
 import actdoFrontCover from "../../assets/project/ACTDO_IMS_IMG/1.png";
+import Link from "next/link";
 
 const projects = [
   {
@@ -8,7 +9,7 @@ const projects = [
       "Angeles City Traffic Development Office - Information Management System as a Design Project to be clear there are no ACTDO valuable data exposed to upload this template.",
     techStack: ["Javascript", "Bootstrap", "PHP", "MYSQL", "XAPP"],
     imageSrc: actdoFrontCover.src,
-    projectDetail: "",
+    projectDetail: "/projects",
   },
   {
     title: "GYMCOACH",
@@ -49,9 +50,8 @@ const ProjectsContainer = () => {
               ))}
             </div>
           </div>
-          <a
-            href="http://"
-            target="_blank"
+          <Link
+            href={project.projectDetail}
             rel="noopener noreferrer"
             className="block overflow-hidden"
           >
@@ -66,7 +66,7 @@ const ProjectsContainer = () => {
               height={400}
               decoding="async"
             />
-          </a>
+          </Link>
         </div>
       ))}
     </div>
