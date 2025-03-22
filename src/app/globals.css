@@ -160,14 +160,14 @@ pre {
 }
 
 
-*,
+/* *,
 :before,
 :after {
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
   border-color: #e5e7eb;
-}
+} */
 
 ::marker {
   unicode-bidi: isolate;
@@ -239,9 +239,4 @@ nav {
 .active-modal {
   opacity: 1;
   visibility: visible;
-}
-
-.border-text-100 {
-  --tw-border-opacity: 1;
-  border-color: rgb(30 32 34 / var(--tw-border-opacity));
 }
