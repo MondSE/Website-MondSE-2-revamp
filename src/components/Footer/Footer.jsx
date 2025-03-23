@@ -4,23 +4,17 @@ const Footer = () => {
   return (
     <footer className=" grid grid-cols-1 gap-14 mx-6 max-w-screen-xl xl:mx-auto rounded-2xl pt-10 lg:mx-24">
       <div className=" flex flex-col lg:flex-row lg:justify-between gap-6">
-        <div className=" flex flex-col gap-4 justify-between">
-          <h2 className=" uppercase italic text-5xl">
-            <font style={{ verticalAlign: "inherit" }}>
-              <font style={{ verticalAlign: "inherit" }}>
-                let's work together
-              </font>
-            </font>
-          </h2>
-          <a
-            href=""
-            className=" btn-primary text-white btn mb-10 w-fit text-lg group"
-          >
-            <font style={{ verticalAlign: "inherit" }}>
-              <font style={{ verticalAlign: "inherit" }}>Contact me</font>
-            </font>
-          </a>
-        </div>
+        <section id="contact">
+          <div className=" flex flex-col gap-4 justify-between">
+            <h2 className=" uppercase italic text-5xl">let's work together</h2>
+            <a
+              href=""
+              className=" btn-primary text-white btn mb-10 w-fit text-lg group"
+            >
+              Contact me
+            </a>
+          </div>
+        </section>
         <div className=" flex flex-col gap-2">
           <h2 className=" uppercase italic text-2xl">
             <font style={{ verticalAlign: "inherit" }}>
