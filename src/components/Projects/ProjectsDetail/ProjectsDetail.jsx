@@ -1,35 +1,32 @@
-import Techstack from "@/components/Techstack/Techstack";
-import React from "react";
+"use client"; // Ensure this is a Client Component
+
+import { useParams } from "next/navigation";
 
 const data = [
   {
     id: 1,
-    title: "ACTDO Mangement Information System",
-    techStack: ["html", "css", "js", "MySql"],
-    githubLink: "/",
-    projectSummary: "explain ko muna",
-    sampleImageProject: ["none", "none", "none", "none"],
-    aim: ["none", "none", "none"],
-    technologiesUsed: [
-      {
-        frontEnd: "asasdasd",
-        backEnd: "asdasdasd",
-        dataBase: "asdasdasd",
-      },
-    ],
-    dataBaseDiagram: "image",
-    implementation: [
-      {
-        frontEnd: ["asasdasd", "asasdasd", "asasdasd"],
-        backEnd: ["asdasdasd", "asasdasd", "asasdasd"],
-        dataBase: ["asdasdasd", "asasdasd", "asasdasd"],
-      },
-    ],
+    title: "ACTDO Management Information System",
+    techStack: ["HTML", "CSS", "JavaScript", "MySQL"],
+  },
+  {
+    id: 2,
+    title: "Another Project",
+    techStack: ["Vue", "Tailwind", "Laravel"],
   },
 ];
 
-const ProjectsDetail = () => {
-  return <div>ProjectsDetail</div>;
-};
+export default function ProjectDetail() {
+  const params = useParams(); // Get route parameters
+  const { id } = params; // Extract 'id'
 
-export default ProjectsDetail;
+  const project = data.find((p) => p.id === Number(id));
+
+  if (!project) return <h1>Project not found</h1>;
+
+  return (
+    <div>
+      <h1>{project.title}</h1>
+      <p>Tech Stack: {project.techStack.join(", ")}</p>
+    </div>
+  );
+}

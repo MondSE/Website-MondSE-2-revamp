@@ -51,7 +51,7 @@ const ProjectsContainer = () => {
             </div>
           </div>
           <Link
-            href={project.projectDetail}
+            href={`/projects/${index + 1}`}
             rel="noopener noreferrer"
             className="block overflow-hidden"
           >

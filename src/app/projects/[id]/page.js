@@ -1,9 +1,6 @@
+import ProjectDetail from "@/components/Projects/ProjectsDetail/ProjectsDetail";
 import React from "react";
 
 export default await function page() {
-  return (
-    <div>
-      <h1>project details page</h1>
-    </div>
-  );
+  return <ProjectDetail />;
 };
