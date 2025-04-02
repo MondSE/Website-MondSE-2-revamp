@@ -19,6 +19,14 @@ const projects = [
     imageSrc: actdoFrontCover.src,
     projectDetail: "",
   },
+  {
+    title: "GYMCOACH",
+    description:
+      "A fitness management system to help trainers and trainees track progress and workouts.",
+    techStack: ["React", "Tailwind", "Node.js", "MongoDB"],
+    imageSrc: actdoFrontCover.src,
+    projectDetail: "",
+  },
 ];
 
 const ProjectsContainer = () => {
