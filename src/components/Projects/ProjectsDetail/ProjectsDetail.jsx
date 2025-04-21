@@ -1,6 +1,14 @@
 "use client"; // Ensure this is a Client Component
 import Head from "next/head";
 import { useParams } from "next/navigation";
+import actdoImage1 from "../../../assets/project/ACTDO_IMS_IMG/1.png";
+import actdoImage2 from "../../../assets/project/ACTDO_IMS_IMG/2.png";
+import actdoImage3 from "../../../assets/project/ACTDO_IMS_IMG/3.png";
+import actdoImage4 from "../../../assets/project/ACTDO_IMS_IMG/4.png";
+import actdoImage5 from "../../../assets/project/ACTDO_IMS_IMG/5.png";
+import actdoImage6 from "../../../assets/project/ACTDO_IMS_IMG/6.png";
+import actdoImage7 from "../../../assets/project/ACTDO_IMS_IMG/7.png";
+import actdoImage8 from "../../../assets/project/ACTDO_IMS_IMG/8.png";
 
 const data = [
   {
@@ -10,7 +18,16 @@ const data = [
     techStack: ["html", "css", "js", "MySql"],
     githubLink: "/",
     projectSummary: "explain ko muna",
-    sampleImageProject: ["none", "none", "none", "none"],
+    sampleImageProject: [
+      actdoImage1.src,
+      actdoImage2.src,
+      actdoImage3.src,
+      actdoImage4.src,
+      actdoImage5.src,
+      actdoImage6.src,
+      actdoImage7.src,
+      actdoImage8.src,
+    ],
     aim: ["none", "none", "none"],
     technologiesUsed: [
       {
@@ -109,6 +126,23 @@ export default function ProjectDetail() {
             {/* Project Summary */}
             <h2 id="resumen-del-proyecto">Project Summary</h2>
             <p className="mb-5">{project.projectSummary}</p>
+            {/* Project Sample Image */}
+            <div className="grid grid-cols-3 gap-4">
+              {project.sampleImageProject.map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`Image ${index + 1}`}
+                  className="rounded-xl w-full h-auto cursor-pointer transition-transform hover:scale-105"
+                  onClick={() => {
+                    alert(`Clicked image: ${src}`); // Debugging Step 2️⃣
+                    console.log("Clicked image:", src);
+                    setSelectedImage(src);
+                  }}
+                />
+              ))}
+            </div>
+
             {/* Objective */}
             <h2 id="Objective">Aim</h2>
             <p>
