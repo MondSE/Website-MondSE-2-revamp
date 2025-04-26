@@ -20,16 +20,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: .5rem;
-  border-radius: .5rem;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
 }
 
 .btn-primary {
@@ -46,11 +45,11 @@ body {
 .hero-icon-bullet,
 .hero-button,
 .nav {
-  visibility: hidden
+  visibility: hidden;
 }
 
 .capitalize {
-  text-transform: capitalize
+  text-transform: capitalize;
 }
 
 #header_nav {
@@ -58,7 +57,7 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1
+  z-index: 1;
 }
 
 .bg-text-100 {
@@ -138,11 +137,6 @@ article {
   line-height: 1.75;
 }
 
-.prose {
-  color: var(--tw-prose-body);
-  max-width: 65ch;
-}
-
 blockquote,
 dl,
 dd,
@@ -158,7 +152,6 @@ p,
 pre {
   margin: 0;
 }
-
 
 /* *,
 :before,
@@ -192,7 +185,7 @@ menu {
   padding: 0;
 }
 
-.prose :where(ul):not(:where([class~=not-prose], [class~=not-prose] *)) {
+.prose :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   list-style-type: disc;
   margin-top: 1.25em;
   margin-bottom: 1.25em;
@@ -200,7 +193,7 @@ menu {
 }
 
 #header_nav {
-  transition: transform .3sease-in-out;
+  transition: transform 0.3sease-in-out;
 }
 
 #header_nav:before {
@@ -209,7 +202,7 @@ menu {
   inset: 0;
   background-image: url(/_astro/grainy_200x200.MzU-yKU9.webp);
   pointer-events: none;
-  opacity: .2;
+  opacity: 0.2;
   z-index: 100;
 }
 
@@ -231,7 +224,7 @@ nav {
   padding: 0 1rem;
   opacity: 0;
   visibility: hidden;
-  transition: .3s;
+  transition: 0.3s;
   overflow-y: scroll;
 }
 

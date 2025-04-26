@@ -9,6 +9,7 @@ import actdoImage5 from "../../../assets/project/ACTDO_IMS_IMG/5.png";
 import actdoImage6 from "../../../assets/project/ACTDO_IMS_IMG/6.png";
 import actdoImage7 from "../../../assets/project/ACTDO_IMS_IMG/7.png";
 import actdoImage8 from "../../../assets/project/ACTDO_IMS_IMG/8.png";
+import { useEffect, useState } from "react";
 
 const data = [
   {
@@ -80,6 +81,42 @@ export default function ProjectDetail() {
 
   if (!project) return <h1>Project not found</h1>;
 
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
+  // Lock scroll when modal opens and unlock when it closes
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden"; // Disable scroll
+    } else {
+      document.body.style.overflow = "auto"; // Re-enable scroll when modal closes
+    }
+    return () => {
+      document.body.style.overflow = "auto"; // Ensure scroll is re-enabled
+    };
+  }, [selectedImage]);
+
+  // Show the selected image and set the index
+  const openModal = (index) => {
+    setSelectedImage(project.sampleImageProject[index]);
+    setCurrentIndex(index);
+  };
+
+  // Navigate to the next image
+  const nextImage = () => {
+    if (currentIndex < project.sampleImageProject.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+      setSelectedImage(project.sampleImageProject[currentIndex + 1]);
+    }
+  };
+
+  // Navigate to the previous image
+  const prevImage = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+      setSelectedImage(project.sampleImageProject[currentIndex - 1]);
+    }
+  };
+
   return (
     // <div>
     //   <h1>{project.title}</h1>
@@ -122,26 +159,76 @@ export default function ProjectDetail() {
             </div>
             <p></p>
           </div>
-          <article className=" prose mb-20 lg:prose-lg">
+          <article className=" max-w-[65ch] prose mb-20 lg:prose-lg dark:text-amber-50">
             {/* Project Summary */}
             <h2 id="resumen-del-proyecto">Project Summary</h2>
             <p className="mb-5">{project.projectSummary}</p>
             {/* Project Sample Image */}
-            <div className="grid grid-cols-3 gap-4">
+            {/* Image Grid */}
+            <div className="grid grid-cols-3 gap-4 mt-5 mb-5">
               {project.sampleImageProject.map((src, index) => (
-                <img
+                <div
                   key={index}
-                  src={src}
-                  alt={`Image ${index + 1}`}
-                  className="rounded-xl w-full h-auto cursor-pointer transition-transform hover:scale-105"
-                  onClick={() => {
-                    alert(`Clicked image: ${src}`); // Debugging Step 2️⃣
-                    console.log("Clicked image:", src);
-                    setSelectedImage(src);
-                  }}
-                />
+                  className="relative w-full aspect-square overflow-hidden rounded-xl cursor-pointer group"
+                  onClick={() => openModal(index)} // Open modal with selected image
+                >
+                  <img
+                    src={src}
+                    alt={`Image ${index + 1}`}
+                    className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                  />
+                </div>
               ))}
             </div>
+
+            {/* Popup Modal */}
+            {selectedImage && (
+              <div
+                className="fixed inset-0 z-[9999] bg-black bg-opacity-80 flex items-center justify-center"
+                onClick={() => setSelectedImage(null)} // Close modal when clicking outside
+              >
+                <div
+                  className="relative max-w-3xl w-full p-4"
+                  onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside image
+                >
+                  <img
+                    src={selectedImage}
+                    alt="Selected"
+                    className="w-full h-auto rounded-xl shadow-2xl"
+                  />
+
+                  {/* Close Button */}
+                  <button
+                    className="absolute top-2 right-2 bg-white text-black rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200 text-xl"
+                    onClick={() => setSelectedImage(null)} // Close on button click
+                  >
+                    ×
+                  </button>
+
+                  {/* Navigation Buttons */}
+                  <div className="absolute top-1/2 left-0 transform -translate-y-1/2 p-2">
+                    <button
+                      onClick={prevImage}
+                      className="bg-white text-black p-2 rounded-full shadow-lg hover:bg-gray-200"
+                      disabled={currentIndex === 0} // Disable when at the first image
+                    >
+                      &lt;
+                    </button>
+                  </div>
+                  <div className="absolute top-1/2 right-0 transform -translate-y-1/2 p-2">
+                    <button
+                      onClick={nextImage}
+                      className="bg-white text-black p-2 rounded-full shadow-lg hover:bg-gray-200"
+                      disabled={
+                        currentIndex === project.sampleImageProject.length - 1
+                      } // Disable when at the last image
+                    >
+                      &gt;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Objective */}
             <h2 id="Objective">Aim</h2>
