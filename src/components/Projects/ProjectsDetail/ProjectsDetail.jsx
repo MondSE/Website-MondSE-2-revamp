@@ -16,9 +16,10 @@ const data = [
     id: 1,
     header: "ACTDO",
     title: "ACTDO Mangement Information System",
-    techStack: ["html", "css", "js", "MySql"],
-    githubLink: "/",
-    projectSummary: "explain ko muna",
+    techStack: ["html", "css", "js", "MySql", "Xampp"],
+    githubLink: "https://github.com/MondSE/ACTDO-IMS-DEMO",
+    projectSummary:
+      "This project is used as a template for the demonstration of the information management system of ACTDO as a Projects using the PHP native and Sql on Xampp to be clear there are no ACTDO valuable data exposed to upload this template.",
     sampleImageProject: [
       actdoImage1.src,
       actdoImage2.src,
@@ -29,20 +30,30 @@ const data = [
       actdoImage7.src,
       actdoImage8.src,
     ],
-    aim: ["none", "none", "none"],
+    aim: [
+      "This software is to automate these processes and to improve the overall efficiency and clients experience of Office.",
+      "The system is easy to use and has user-friendly functionalities to help the employee's for their daily transactions.",
+    ],
     technologiesUsed: [
       {
-        frontEnd: "asasdasd",
-        backEnd: "asdasdasd",
-        dataBase: "asdasdasd",
+        frontEnd:
+          " HTML, CSS, JavaScript and Bootstrap for the user interface.",
+        backEnd: " PHP with the Xampp to handle application logic and APIs.",
+        dataBase:
+          " MySQL to store user data, routines and queries to the virtual assistant.",
       },
     ],
     dataBaseDiagram: "image",
     implementation: [
       {
-        frontEnd: ["asasdasd", "asasdasd", "asasdasd"],
-        backEnd: ["asdasdasd", "asasdasd", "asasdasd"],
-        dataBase: ["asdasdasd", "asasdasd", "asasdasd"],
+        frontEnd: [
+          "Development of a clean and dynamic user dashboard for creating, editing, and viewing exercise routines.",
+          "Integration of interactive graphics to display physical progress.",
+        ],
+        backEnd: ["Implementation of endpoints for CRUD routines."],
+        dataBase: [
+          "Designing tables for users, exercises, and queries with normalized relationships.",
+        ],
       },
     ],
   },
@@ -65,9 +76,14 @@ const data = [
     dataBaseDiagram: "image",
     implementation: [
       {
-        frontEnd: ["asasdasdccccc", "asasdasd", "asasdasd"],
-        backEnd: ["asdasdasdcccc", "asasdasd", "asasdasd"],
-        dataBase: ["asdasdasdcccc", "asasdasd", "asasdasd"],
+        frontEnd: [
+          "Development of a clean and dynamic user dashboard for creating, editing, and viewing exercise routines.",
+          "Integration of interactive graphics to display physical progress.",
+        ],
+        backEnd: ["Implementation of endpoints for CRUD routines."],
+        dataBase: [
+          "Designing tables for users, exercises, and queries with normalized relationships.",
+        ],
       },
     ],
   },
@@ -131,7 +147,7 @@ export default function ProjectDetail() {
           <h1 className=" text-3xl lg:text-5xl mb-5 font-bold">
             {project.title}
           </h1>
-          <div className=" flex gap-2">
+          <div className=" flex gap-2 mt-5">
             <div className="mb-10">
               <h3 className="text-pretty text-text-100/60">Technologies:</h3>
               <div className="flex flex-wrap gap-2">
@@ -147,10 +163,10 @@ export default function ProjectDetail() {
             </div>
           </div>
           <div className=" flex flex-wrap gap-2 mb-10">
-            <p className="">GitHub:</p>
+            <p className="">GitHub: </p>
             <div className=" flex gap-1">
               <a
-                href="http://"
+                href={project.githubLink}
                 target="_blank"
                 className=" text-pretty text-primary-100 underline"
               >
@@ -243,15 +259,11 @@ export default function ProjectDetail() {
             </ul>
             {/* Objective */}
             <h2 id="Objective">Technologies Used</h2>
-            <p>
-              The main goal of {project.title} is to provide users with an
-              all-in-on tool to:
-            </p>
             <ul>
               <li>
                 <h3 className="inline font-semibold">Frontend: </h3>
                 <span>
-                  {project.technologiesUsed?.[0]?.frontEnd || "Not specified"}
+                  {project.technologiesUsed?.[0]?.frontEnd || "Not specified"}{" "}
                 </span>
               </li>
               <li>
@@ -292,6 +304,18 @@ export default function ProjectDetail() {
                 {project.implementation?.[0]?.dataBase?.map((item, index) => (
                   <li key={index}>{item}</li>
                 )) || <li>Not specified</li>}
+              </ul>
+              <h2>Links</h2>
+              <ul>
+                <li>
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    className=" text-pretty text-primary-100 underline"
+                  >
+                    GitHub Repository
+                  </a>
+                </li>
               </ul>
             </div>
           </article>

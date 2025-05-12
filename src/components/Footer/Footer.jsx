@@ -22,7 +22,7 @@ const Footer = () => {
             </font>
           </h2>
           <a
-            href="http://"
+            href="https://github.com/MondSE"
             target="_blank"
             rel="noopener noreferrer"
             className=" relative w-fit overflow-hidden whitespace-nowrap uppercase font-normal text-lg"
@@ -30,7 +30,7 @@ const Footer = () => {
             github
           </a>
           <a
-            href="http://"
+            href="https://www.linkedin.com/in/almond-rae-tuazon-647a2726a"
             target="_blank"
             rel="noopener noreferrer"
             className=" relative w-fit overflow-hidden whitespace-nowrap uppercase font-normal text-lg"
@@ -42,20 +42,8 @@ const Footer = () => {
       <div className="space-y-1">
         <h1>Almond Rae Tuazon</h1>
         <div className="flex justify-between pb-8">
-          <p className="">
-            <font style={{ verticalAlign: "inherit" }}>
-              <font style={{ verticalAlign: "inherit" }}>
-                Copyright 2025. All right
-              </font>
-            </font>
-          </p>
-          <p className="">
-            <font style={{ verticalAlign: "inherit" }}>
-              <font style={{ verticalAlign: "inherit" }}>
-                Philippines, 2025.
-              </font>
-            </font>
-          </p>
+          <p className="">Copyright 2025. All right</p>
+          <p className="">Philippines, 2025.</p>
         </div>
       </div>
     </footer>
